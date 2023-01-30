@@ -13,17 +13,17 @@ Descripition...
 
 * Daniel Bondar
 
-David Fugnitto
+* David Fugnitto
 
-Gabriel Lemieux
+* Gabriel Lemieux
 
-Patrick MacEachen
+* Patrick MacEachen
 
-Rory Poonyth
+* Rory Poonyth
 
-Ryan Washer
+* Ryan Washer
 
-Renal Wasouf
+* Renal Wasouf
 
 ## Technologies
 
