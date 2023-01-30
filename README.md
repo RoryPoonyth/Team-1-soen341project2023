@@ -14,13 +14,9 @@ Descripition...
 * Daniel Bondar
 * David Fugnitto
 * Gabriel Lemieux
-
 * Patrick MacEachen
-
 * Rory Poonyth
-
 * Ryan Washer
-
 * Renal Wasouf
 
 ## Technologies
