@@ -1,16 +1,25 @@
 # Team-1
 SOEN 341 Project Repository - Team 1
 
-User stories (TBD):
+## Objective
 
-1) As an employer, once I've created an account and logged in to the platform, I want to post job offers and manage them.
+To create a job application platform.
 
-2) As a student, once I've created an account and logged in, I want to browse for job offers and apply for them.
+## Project Description
 
-3) As a student, I want to be able to upload my resume and update my profile so that I can showcase my skills and qualifications to potential employers.
+Descripition...
 
-4) As an employer, I want to receive notifications when students apply for my job offers.
+## Team Members
 
-5) As an employer, I want to be able to shortlist candidates for an interview.
+* Daniel Bondar
+* David Fugnitto
+* Gabriel Lemieux
+* Patrick MacEachen
+* Rory Poonyth
+* Ryan Washer
+* Renal Wasouf
 
-6) As an admin, I want to be able to view and manage all user profiles and job postings on the platform so that I can ensure the platform is running smoothly and all users are following the guidelines.
+## Technologies
+
+...
+...
