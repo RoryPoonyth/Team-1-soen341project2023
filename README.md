@@ -1,15 +1,15 @@
 # Team-1
 SOEN 341 Project Repository - Team 1
 
-# Objective
+## Objective
 
 To create a job application platform.
 
-# Project Description
+## Project Description
 
 Descripition...
 
-# Team Members
+## Team Members
 
 Daniel Bondar
 David Fugnitto
@@ -19,7 +19,7 @@ Rory Poonyth
 Ryan Washer
 Renal Wasouf
 
-# Technologies
+## Technologies
 
 ...
 ...
