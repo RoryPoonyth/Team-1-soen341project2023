@@ -11,7 +11,7 @@ Descripition...
 
 ## Team Members
 
-*Daniel Bondar
+* Daniel Bondar
 
 David Fugnitto
 
