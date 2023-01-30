@@ -12,9 +12,7 @@ Descripition...
 ## Team Members
 
 * Daniel Bondar
-
 * David Fugnitto
-
 * Gabriel Lemieux
 
 * Patrick MacEachen
