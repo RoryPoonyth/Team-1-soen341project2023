@@ -25,14 +25,14 @@ Employers will be able to:
 
 As well as Admins who will be able to manage and overview the job postings and user profiles.
 
-## Team Members (Real name / Username)
+## Team Members (Real name / Username) & Roles
 
 * Daniel Bondar / KiwamiMeansExtreme
-* David Fugnitto / davidfugnitto7 / front end
+* David Fugnitto / davidfugnitto7
 * Gabriel Lemieux / G-Lemieux
 * Patrick MacEachen / patrickmac3
-* Rory Poonyth / RoryPoonyth, Team leader
-* Ryan Washer / Rycy212
+* Rory Poonyth / RoryPoonyth (Team Lead / ...)
+* Ryan Washer / Rycy212 (Back End)
 * Renal Wasouf / RenalWasouf
 
 ## Technologies
