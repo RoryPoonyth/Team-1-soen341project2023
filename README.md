@@ -27,13 +27,13 @@ As well as Admins who will be able to manage and overview the job postings and u
 
 ## Team Members (Real name / Username)
 
-* Daniel Bondar / 
-* David Fugnitto / 
-* Gabriel Lemieux / 
-* Patrick MacEachen
+* Daniel Bondar / KiwamiMeansExtreme
+* David Fugnitto / davidfugnitto7
+* Gabriel Lemieux / G-Lemieux
+* Patrick MacEachen / patrickmac3
 * Rory Poonyth / RoryPoonyth, Team leader
-* Ryan Washer / 
-* Renal Wasouf /
+* Ryan Washer / Rycy212
+* Renal Wasouf / RenalWasouf
 
 ## Technologies
 
