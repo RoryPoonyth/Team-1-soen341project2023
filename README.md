@@ -36,6 +36,12 @@ As well as Admins who will be able to manage and overview the job postings and u
 * Renal Wasouf / RenalWasouf
 
 ## Technologies
+...
+...
 
-...
-...
+## 4 Core Features
+1.
+2.
+3.
+4.
+
