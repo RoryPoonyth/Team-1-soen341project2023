@@ -41,7 +41,7 @@ As well as Admins who will be able to manage and overview the job postings and u
 
 ## 4 Core Features
 1. Filter posting (such as latest, most viewed, etc.)
-2. Users will be able to follow others
+2. Users will be able to follow other users, as well as employers
 3. 
 4.
 
