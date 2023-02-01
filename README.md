@@ -3,19 +3,19 @@ SOEN 341 Project Repository - Team 1
 
 ## Objective
 
-To create a job application platform.
+To create a carrer service platform dedicated for students to help them post and update their portfolio, as well as letting employers post jobs.
 
 ## Project Description
 
-Descripition...
+TBD
 
-## Team Members
+## Team Members (Real name / Username)
 
-* Daniel Bondar
-* David Fugnitto
+* Daniel Bondar / 
+* David Fugnitto / 
 * Gabriel Lemieux
 * Patrick MacEachen
-* Rory Poonyth
+* Rory Poonyth / RoryPoonyth, Team leader
 * Ryan Washer
 * Renal Wasouf
 
