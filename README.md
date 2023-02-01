@@ -28,7 +28,7 @@ As well as Admins who will be able to manage and overview the job postings and u
 ## Team Members (Real name / Username)
 
 * Daniel Bondar / KiwamiMeansExtreme
-* David Fugnitto / davidfugnitto7
+* David Fugnitto / davidfugnitto7 / front end
 * Gabriel Lemieux / G-Lemieux
 * Patrick MacEachen / patrickmac3
 * Rory Poonyth / RoryPoonyth, Team leader
