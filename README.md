@@ -41,7 +41,7 @@ As well as Admins who will be able to manage and overview the job postings and u
 
 ## 4 Core Features
 1.
-2.
+2. Users will be able to follow others
 3.
 4.
 
