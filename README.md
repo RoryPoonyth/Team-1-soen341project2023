@@ -23,7 +23,7 @@ Employers will be able to:
   - Review candidates applications
   - Receive notifications when students apply
 
-As well as Admins who will be able to manage and overview the job postings and user profiles.
+As well as Admins who will be able to manage and overview job postings and user profiles to ensure the platform is running smoothly and all users are following the guidelines.
 
 ## Team Members (Real name / Username) & Roles
 
