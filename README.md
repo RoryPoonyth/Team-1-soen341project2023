@@ -29,11 +29,11 @@ As well as Admins who will be able to manage and overview job postings and user 
 
 * Daniel Bondar / KiwamiMeansExtreme
 * David Fugnitto / davidfugnitto7 (Front End)
-* Gabriel Lemieux / G-Lemieux (TBD)
-* Patrick MacEachen / patrickmac3
-* Rory Poonyth / RoryPoonyth (Team Lead / ...)
+* Gabriel Lemieux / G-Lemieux (Back End)
+* Patrick MacEachen / patrickmac3 (Front End)
+* Rory Poonyth / RoryPoonyth (Team Lead / Front End)
 * Ryan Washer / Rycy212 (Back End)
-* Renal Wasouf / RenalWasouf
+* Renal Wasouf / RenalWasouf (Back End)
 
 ## Technologies
 ...
