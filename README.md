@@ -27,7 +27,7 @@ As well as Admins who will be able to manage and overview job postings and user 
 
 ## Team Members (Real name / Username) & Roles
 
-* Daniel Bondar / KiwamiMeansExtreme (Front End
+* Daniel Bondar / KiwamiMeansExtreme (Front End)
 * David Fugnitto / davidfugnitto7 (Front End)
 * Gabriel Lemieux / G-Lemieux (Back End)
 * Patrick MacEachen / patrickmac3 (Back End)
@@ -36,8 +36,10 @@ As well as Admins who will be able to manage and overview job postings and user 
 * Renal Wasouf / RenalWasouf (Back End)
 
 ## Technologies
-...
-...
+-CSS
+-PHP
+-Blade
+-Laravel
 
 ## 4 Core Features
 1. Filter posting (such as latest, most viewed, etc.)
