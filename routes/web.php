@@ -29,3 +29,14 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+//register
+Route::get('/register', [UserController::class, 'create']);
+
+
+
+//Creating new user
+Route::get('/users', [UserController::class, 'store']);
+
+//show login form
+Route::get('/login', [UserController::class, 'login']);
