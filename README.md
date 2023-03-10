@@ -36,8 +36,10 @@ As well as Admins who will be able to manage and overview job postings and user 
 * Renal Wasouf / RenalWasouf (Back End)
 
 ## Technologies
-...
-...
+-CSS
+-PHP
+-Blade
+-Laravel
 
 ## 4 Core Features
 1. Filter posting (such as latest, most viewed, etc.)
