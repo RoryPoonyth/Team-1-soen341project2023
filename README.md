@@ -9,7 +9,7 @@ Develop a job application platform dedicated to students looking for work in the
 
 Language & Techniques: TBD
 
-We will be developping an online career services system where both the Employers and Employees will create accounts and log in with their email and passwords.
+We will be developping an online career services system where both Employers and Employees will create accounts and log in with their email and passwords.
 
 Students will be able to:
   - Create/Modify their profiles
