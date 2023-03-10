@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateClicksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('clicks', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('posting_id');
+            $table->text('user_agent')->nullable();
+            $table->string('ip')->nullable();
             $table->timestamps();
         });
     }
