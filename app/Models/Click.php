@@ -11,8 +11,8 @@ class Click extends Model
 
     protected $guarded = [];
 
-    public function posting()
+    public function listings()
     {
-        return $this->belongsTo(Postings::class);
+        return $this->belongsTo(Listing::class);
     }
 }
