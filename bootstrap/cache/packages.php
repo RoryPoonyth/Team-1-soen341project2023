@@ -6,13 +6,6 @@
       0 => 'Laravel\\Breeze\\BreezeServiceProvider',
     ),
   ),
-  'laravel/cashier' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Laravel\\Cashier\\CashierServiceProvider',
-    ),
-  ),
   'laravel/sail' => 
   array (
     'providers' => 
@@ -53,13 +46,6 @@
     'providers' => 
     array (
       0 => 'Termwind\\Laravel\\TermwindServiceProvider',
-    ),
-  ),
-  'pestphp/pest' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Pest\\Laravel\\PestServiceProvider',
     ),
   ),
   'spatie/laravel-ignition' => 
