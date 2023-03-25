@@ -1,16 +1,20 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ListingController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
 
-Route::get('/', [Controllers\ListingController::class, 'index'])
+
+
+Route::get('/',  HomeController::class)
     ->name('listings.index');
 
-Route::get('/new', [Controllers\ListingController::class, 'create'])
+Route::get('/new', [ListingController::class, 'create'])
     ->name('listings.create');
 
-Route::post('/new', [Controllers\ListingController::class, 'store'])
+Route::post('/new', [ListingController::class, 'store'])
     ->name('listings.store');
 
 Route::get('/dashboard', function () {
@@ -28,8 +32,8 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/{listing}', [Controllers\ListingController::class, 'show'])
+Route::get('/{listing}', [ListingController::class, 'show'])
     ->name('listings.show');
 
-Route::get('/{listing}/apply', [Controllers\ListingController::class, 'apply'])
+Route::get('/{listing}/apply', [ListingController::class, 'apply'])
     ->name('listings.apply');

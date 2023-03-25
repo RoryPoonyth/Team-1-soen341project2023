@@ -13,41 +13,24 @@ use Illuminate\Support\Str;
 
 class ListingController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $listings = Listing::where('is_active', true)
-            ->with('tags')
-            ->latest()
-            ->get();
+        $user = Auth::user();
 
-        $tags = Tag::orderBy('name')
-            ->get();
+        if($user->is_employer){
+            $listings = Listing::where('user_id', $user->id)
+                ->where('is_active', true)
+                ->with('tags')
+                ->latest()
+                ->get();
 
-        if ( $request->has('search')){
-            $query = strtolower($request->get('search'));
-            $listings = $listings -> filter( function ($listing)  use($query) {
+            $tags = Tag::order('name')
+                ->get();
 
-                if (Str::contains(strtolower($listing->title), $query)) {
-                     return true;
-                    }
-                if (Str::contains(strtolower($listing->company), $query)) {
-                    return true;
-                }
-
-                if (Str::contains(strtolower($listing->location), $query)) {
-                     return true;
-                }
-
-                return false;
-            });
+            return view('dashboard', ['listings', 'tags']);
+        }else{
+            return view('dashboard');
         }
-            if ( $request->has('tag') ) {
-                $tag = $request->get('tag');
-                $listings = $listings->filter( function($listing) use($tag) {
-                    return $listing->tags->contains('slug', $tag);
-                });
-            }
-        return view('listings.index', compact('listings', 'tags'));
     }
 
     public function show(Listing $listing, Request $request)
