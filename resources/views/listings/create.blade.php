@@ -22,7 +22,7 @@
                 enctype="multipart/form-data"
                 class="bg-gray-100 p-4"
             >
-                @guest
+                <!-- @guest
                     <div class="flex mb-4">
                         <div class="flex-1 mx-2">
                             <x-input-label for="email" value="Email Address" />
@@ -66,7 +66,7 @@
                                 required />
                         </div>
                     </div>
-                @endguest
+                @endguest -->
                 <div class="mb-4 mx-2">
                     <x-input-label for="title" value="Job Title" />
                     <x-text-input

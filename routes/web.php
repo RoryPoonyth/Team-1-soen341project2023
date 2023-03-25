@@ -12,6 +12,7 @@ Route::get('/',  HomeController::class)
     ->name('listings.index');
 
 Route::get('/new', [ListingController::class, 'create'])
+    ->middleware('auth')
     ->name('listings.create');
 
 Route::post('/new', [ListingController::class, 'store'])

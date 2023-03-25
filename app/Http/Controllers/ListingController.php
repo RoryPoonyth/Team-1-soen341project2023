@@ -27,7 +27,7 @@ class ListingController extends Controller
             $tags = Tag::order('name')
                 ->get();
 
-            return view('dashboard', ['listings', 'tags']);
+            return view('dashboard', ['listings', 'tags', 'user']);
         }else{
             return view('dashboard');
         }
