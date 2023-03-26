@@ -11,6 +11,8 @@ use App\Http\Controllers;
 Route::get('/',  HomeController::class)
     ->name('listings.index');
 
+
+
 Route::get('/new', [ListingController::class, 'create'])
     ->middleware('auth')
     ->name('listings.create');
@@ -18,9 +20,7 @@ Route::get('/new', [ListingController::class, 'create'])
 Route::post('/new', [ListingController::class, 'store'])
     ->name('listings.store');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})
+Route::get('/dashboard', [ListingController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 

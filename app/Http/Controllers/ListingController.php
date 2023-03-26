@@ -24,11 +24,12 @@ class ListingController extends Controller
                 ->latest()
                 ->get();
 
-            $tags = Tag::order('name')
+            $tags = Tag::orderBy('name')
                 ->get();
 
-            return view('dashboard', ['listings', 'tags', 'user']);
+            return view('dashboard', compact('listings', 'tags'));
         }else{
+            
             return view('dashboard');
         }
     }
