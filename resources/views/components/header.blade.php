@@ -22,12 +22,19 @@
                 </svg>
             </a>
         @else
+            @if (! Route::is('dashboard'))
+            <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                <a href="{{ route('dashboard') }}" class="mr-5 hover:text-gray-900">{{Auth::user()->name}}</a>
+            </nav>
+            @endif 
+            @if (Route::is('dashboard'))
             <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button type="submit" class="mr-5 hover:text-gray-900">Logout</button>
                 </form>
             </nav>
+           @if ( Auth::user()->is_employer)
             <a href="{{ route('listings.create') }}"
                 class="inline-flex items-center bg-indigo-500 text-white border-0 py-1 px-3 focus:outline-none hover:bg-indigo-600 rounded text-base mt-4 md:mt-0">Create
                 a Post
@@ -35,7 +42,10 @@
                     class="w-4 h-4 ml-1" viewBox="0 0 24 24">
                     <path d="M5 12h14M12 5l7 7-7 7"></path>
                 </svg>
-            </a>
+            </a> 
+    
+            @endif
+            @endif
         @endguest
 
 
