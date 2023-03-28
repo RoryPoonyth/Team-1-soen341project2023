@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Listing;
+use App\Models\Application;
 use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -29,8 +30,20 @@ class ListingController extends Controller
 
             return view('dashboard', compact('listings', 'tags'));
         }else{
-            
-            return view('dashboard');
+
+            $listings = Application::where('user_id', $user->id)
+                    ->pluck('listing_id')
+                    ->toArray();
+
+            $listings = Listing::whereIn('id', $listings)
+                ->with('applications')
+                ->get();
+
+            $applications = Application::where('user_id', $user->id)->get();
+
+
+
+            return view('dashboard', compact('listings', 'user', 'applications'));
         }
     }
 
