@@ -44,17 +44,20 @@ class ListingController extends Controller
         }
     }
 
+
     public function show(Listing $listing, Request $request)
     {
+
         $user = Auth::user();
 
-        if ($user->is_employer){
-            return view('listings.show', compact('listing'));
-        }else{
+        if (!$user || !$user->is_employer){
             return view('applications.show', compact('listing'));
+        }else{
+            return view('listings.show', compact('listing'));
         }
     }
 
+    
     public function apply(Listing $listing, Request $request)
     {
         $listing->clicks()

@@ -1,18 +1,23 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ListingController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
 
 
-
+//Home page
 Route::get('/',  HomeController::class)
     ->name('listings.index');
 
+//Account dashboard -> contains either listings you have created or Listings applied to 
+Route::get('/dashboard', [ListingController::class, 'index'])
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
 
-
+//Creating new Listing
 Route::get('/new', [ListingController::class, 'create'])
     ->middleware('auth')
     ->name('listings.create');
@@ -20,15 +25,16 @@ Route::get('/new', [ListingController::class, 'create'])
 Route::post('/new', [ListingController::class, 'store'])
     ->name('listings.store');
 
-Route::get('/dashboard', [ListingController::class, 'index'])
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
 
-    
+//show listings
+Route::get('/{listing}', [ListingController::class, 'show'])
+    ->name('listings.show');
 
-Route::get('/{listing}', function(Listing $listing, Request $request){
-    return view('applications.show', compact('listing'));
-})->name('applications.show');
+//Create an application
+Route::get('/{listing}/apply', [ApplicationController::class, 'create'])
+    ->name('applications.create');
+Route::post('/{listing}/apply', [ApplicationController::class, 'store'])
+    ->name('applications.store');
 
 // Route::middleware('auth')->group(function () {
 //     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -37,9 +43,3 @@ Route::get('/{listing}', function(Listing $listing, Request $request){
 // });
 
 require __DIR__.'/auth.php';
-
-Route::get('/{listing}', [ListingController::class, 'show'])
-    ->name('listings.show');
-
-Route::get('/{listing}/apply', [ListingController::class, 'apply'])
-    ->name('listings.apply');
