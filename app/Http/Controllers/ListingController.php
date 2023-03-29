@@ -25,10 +25,7 @@ class ListingController extends Controller
                 ->latest()
                 ->get();
 
-            $tags = Tag::orderBy('name')
-                ->get();
-
-            return view('dashboard', compact('listings', 'tags'));
+            return view('dashboard', compact('listings', 'user'));
         }else{
 
             $listings = Application::where('user_id', $user->id)
@@ -49,7 +46,13 @@ class ListingController extends Controller
 
     public function show(Listing $listing, Request $request)
     {
-        return view('listings.show', compact('listing'));
+        $user = Auth::user();
+
+        if ($user->is_employer){
+            return view('listings.show', compact('listing'));
+        }else{
+            return view('applications.show', compact('listing'));
+        }
     }
 
     public function apply(Listing $listing, Request $request)

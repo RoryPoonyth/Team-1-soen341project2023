@@ -14,9 +14,9 @@
                             there are no listings
                         </div>
                     @else
-                    @foreach($listings as $listing)
+                    @foreach($listings as $listing)<!-- $listing->slug -->
                 <a
-                    href="{{ $user->is_employer ? route('listings.show', $listing->slug) : route('applications.show')  }}"
+                     href="{{ route('listings.show', $listing->slug, $listing) }}" 
                     class="py-6 px-4 flex flex-wrap md:flex-nowrap border-b border-gray-100
                     {{ $listing->is_highlighted ? 'bg-yellow-100 hover:bg-yellow-200' : 'bg-white hover:bg-gray-100' }}"
                 >

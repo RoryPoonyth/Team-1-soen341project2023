@@ -47,11 +47,25 @@ class User extends Authenticatable
 
     public function listings()
     {
-        return $this->hasMany(Listing::class);
+        $user = Auth::user();
+
+        if ($user->is_employer){
+            return $this->hasMany(Listing::class);
+        }else{
+            return $this->hasManyThrough(Listing::class, Application::class);
+        }
+        // return $this->hasMany(Listing::class);
     }
 
     public function applications()
     {
-        return $this->hasMany(Application::class);
+        $user = Auth::user();
+
+        if ($user->is_employer){
+            return $this->hasManyThrough(Listing::class, Application::class);
+        }else{
+            return $this->hasMany(Application::class);
+        }
+        // return $this->hasMany(Application::class);
     }
 }
