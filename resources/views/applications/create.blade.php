@@ -22,7 +22,6 @@
                 enctype="multipart/form-data"
                 class="bg-gray-100 p-4"
             >
-                @guest
                     <div class="flex mb-4">
                         <div class="flex-1 mx-2">
                             <x-input-label for="email" value="Email Address" />
@@ -46,6 +45,27 @@
                                 required />
                         </div>
                     </div>
+                @guest
+                <div class="flex mb-4">
+                    <div class="flex-1 mx-2">
+                        <x-input-label for="password" value="Password" />
+                        <x-text-input
+                            class="block mt-1 w-full"
+                            id="password"
+                            type="password"
+                            name="password"
+                            required />
+                    </div>
+                    <div class="flex-1 mx-2">
+                        <x-input-label for="password_confirmation" value="Confirm Password" />
+                        <x-text-input
+                            class="block mt-1 w-full"
+                            id="password_confirmation"
+                            type="password"
+                            name="password_confirmation"
+                            required />
+                    </div>
+                </div>
                 @endguest
                 <div class="mb-4 mx-2">
                     <x-input-label for="logo" value="Resume" />

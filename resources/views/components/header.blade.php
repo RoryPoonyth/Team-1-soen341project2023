@@ -6,13 +6,36 @@
             </svg>
             <span class="ml-3 text-xl">Laravel Job Board</span>
         </a>
-        <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-            <a href="{{ route('login') }}" class="mr-5 hover:text-gray-900">Employers</a>
-        </nav>
-        <a href="{{ route('listings.create') }}" class="inline-flex items-center bg-indigo-500 text-white border-0 py-1 px-3 focus:outline-none hover:bg-indigo-600 rounded text-base mt-4 md:mt-0">Post Job
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-        </a>
+        @guest
+            <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                <a href="{{ route('login') }}" class="mr-5 hover:text-gray-900">Login</a>
+            </nav>
+            <a href="{{ route('register') }}" class="inline-flex items-center bg-indigo-500 text-white border-0 py-1 px-3 focus:outline-none hover:bg-indigo-600 rounded text-base mt-4 md:mt-0">Register
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        @else
+            @if (Route::is('dashboard'))
+                <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="mr-5 hover:text-gray-900">Logout</button>
+                    </form>
+                </nav>
+                @if (Auth::user()->is_employer)
+                    <a href="{{ route('listings.create') }}" class="inline-flex items-center bg-indigo-500 text-white border-0 py-1 px-3 focus:outline-none hover:bg-indigo-600 rounded text-base mt-4 md:mt-0">
+                        Create
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                @endif
+            @else
+                <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                    <a href="{{ route('dashboard') }}" class="mr-5 hover:text-gray-900">{{ Auth::user()->name }}</a>
+                </nav>
+            @endif
+        @endguest
     </div>
 </header>

@@ -16,20 +16,37 @@ class ApplicationController extends Controller
     public function store(Listing $listing, Request $request)
     {
         // process application form
-        $applyArray = [
-            'email' => 'required',
+        $validationArray = [
+            'email' => 'required|email',
             'name' => 'required',
             'resume' => 'file|max:2048'
         ];
 
-        $application = user->applications() //Need application model
-            ->create([
-                'email' => $request->email,
-                'name' => $request->name,
-                'resume' => basename($request->file(key: 'resume')->store(path: 'public'))
-            ]);
+        $request->validate($validationArray);
 
-        return redirect()->route('dashboard');
+        $user = Auth::user();
+
+        if (!$user){
+            $user = User::create([
+                'name' => $request->name,
+                'email'=> $request->email,
+                'password' => Hash::make($request->password)
+            ]);
+        }
+
+        Auth::login($user);
+        try{
+            $user->applications() //Need application model
+                ->create([
+                    'email' => $request->email,
+                    'name' => $request->name,
+                    'resume' => basename($request->file(key: 'resume')->store(path: 'public'))
+                ]);
+
+            return redirect()->route('dashboard');
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
     }
 
     public function create(Listing $listing, Request $request)

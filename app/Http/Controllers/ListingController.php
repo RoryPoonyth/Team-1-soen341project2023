@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Application;
 use App\Models\Listing;
 use App\Models\Tag;
 use App\Models\User;
@@ -15,39 +16,26 @@ class ListingController extends Controller
 {
     public function index(Request $request)
     {
-        $listings = Listing::where('is_active', true)
-            ->with('tags')
-            ->latest()
-            ->get();
+        $user = Auth::user();
 
-        $tags = Tag::orderBy('name')
-            ->get();
+        if ($user->is_employer){
+            $listings = Listing::where('user_id', $user->id)
+                ->where('is_active', true)
+                ->with('tags')
+                ->get();
 
-        if ( $request->has('search')){
-            $query = strtolower($request->get('search'));
-            $listings = $listings -> filter( function ($listing)  use($query) {
+                return view('dashboard', compact('listings'));
+        }else{
+            $listings = Application::where('user_id', $user->id)
+                ->pluck('listing_id')
+                ->toArray();
 
-                if (Str::contains(strtolower($listing->title), $query)) {
-                     return true;
-                    }
-                if (Str::contains(strtolower($listing->company), $query)) {
-                    return true;
-                }
+            $listings = Listing::whereIn('id', $listings)
+                ->with('applications')
+                ->get();
 
-                if (Str::contains(strtolower($listing->location), $query)) {
-                     return true;
-                }
-
-                return false;
-            });
+            return view('dashboard', compact('listings'));
         }
-            if ( $request->has('tag') ) {
-                $tag = $request->get('tag');
-                $listings = $listings->filter( function($listing) use($tag) {
-                    return $listing->tags->contains('slug', $tag);
-                });
-            }
-        return view('listings.index', compact('listings', 'tags'));
     }
 
     public function show(Listing $listing, Request $request)
@@ -133,7 +121,7 @@ class ListingController extends Controller
             }
 
             return redirect()->route('dashboard');
-        } catch(\Exception $e) {
+        } catch (\Exception $e) {
             return redirect()->back()
                 ->withErrors(['error' => $e->getMessage()]);
         }
