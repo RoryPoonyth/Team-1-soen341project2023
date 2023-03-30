@@ -12,7 +12,10 @@ Route::get('/new', [Controllers\ListingController::class, 'create'])
 
 Route::post('/new', [Controllers\ListingController::class, 'store'])
     ->name('listings.store');
-
+/*
+Route::post('/new', [Controllers\ListingController::class, 'apply'])
+    ->name('listings.apply');
+*/
 Route::get('/dashboard', function () {
     return view('dashboard');
 })

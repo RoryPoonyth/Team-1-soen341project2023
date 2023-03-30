@@ -55,17 +55,6 @@ class ListingController extends Controller
         return view('listings.show', compact('listing'));
     }
 
-    public function apply(Listing $listing, Request $request)
-    {
-        $listing->clicks()
-            ->create([
-                'user_agent' => $request->userAgent(),
-                'ip' => $request->ip()
-            ]);
-
-        return redirect()->to($listing->apply_link);
-    }
-
     public function create()
     {
         return view('listings.create');
@@ -149,5 +138,10 @@ class ListingController extends Controller
                 ->withErrors(['error' => $e->getMessage()]);
         }
     }
+    public function apply()
+    {
+        return view('listings.apply');
     }
+    
+}
 
