@@ -13,7 +13,7 @@ use Illuminate\Support\Str;
 
 class ApplicationController extends Controller
 {
-    public function storeApplication(Request $request)
+    public function store(Listing $listing, Request $request)
     {
         // process application form
         $applyArray = [
@@ -22,11 +22,18 @@ class ApplicationController extends Controller
             'resume' => 'file|max:2048'
         ];
 
-        $listing = user->listings()
-            ->apply([
+        $application = user->applications()
+            ->create([
                 'email' => $request->email,
                 'name' => $request->name,
-                'resume' => basename($request->file(key: 'resume')->storeApplication(path: 'public'))
+                'resume' => basename($request->file(key: 'resume')->store(path: 'public'))
             ]);
+
+        return redirect()->route('dashboard');
+    }
+
+    public function create(Listing $listing, Request $request)
+    {
+        return view('applications.create', compact('listing'));
     }
 }

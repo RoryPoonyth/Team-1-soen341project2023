@@ -16,8 +16,8 @@
                 </div>
             @endif
             <form
-                action="{{ route('listings.store') }}"
-                id="payment_form"
+                action="{{ route('applications.store', $listing->slug) }}"
+                id="application_form"
                 method="post"
                 enctype="multipart/form-data"
                 class="bg-gray-100 p-4"
@@ -62,4 +62,11 @@
             </form>
         </div>
     </section>
+    <script>
+        document.getElementById('form_submit').addEventListener('click', async (e) => {
+            // prevent the submission of the form immediately
+            e.preventDefault();
+            document.getElementById('application_form').submit();
+        })
+    </script>
 </x-app-layout>

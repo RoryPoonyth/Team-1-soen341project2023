@@ -138,10 +138,5 @@ class ListingController extends Controller
                 ->withErrors(['error' => $e->getMessage()]);
         }
     }
-    public function apply()
-    {
-        return view('listings.apply');
-    }
-    
 }
 

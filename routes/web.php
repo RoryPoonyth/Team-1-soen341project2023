@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ApplicationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
 
@@ -12,11 +12,11 @@ Route::get('/new', [Controllers\ListingController::class, 'create'])
 
 Route::post('/new', [Controllers\ListingController::class, 'store'])
     ->name('listings.store');
-/*
-Route::post('/new', [Controllers\ListingController::class, 'apply'])
-    ->name('listings.apply');
-*/
-Route::get('/dashboard', function () {
+
+Route::post('/{listing}/apply', [ApplicationController::class, 'store'])->name('applications.store');
+
+Route::get('/dashboard', function () 
+{
     return view('dashboard');
 })
     ->middleware(['auth', 'verified'])
@@ -34,5 +34,4 @@ require __DIR__.'/auth.php';
 Route::get('/{listing}', [Controllers\ListingController::class, 'show'])
     ->name('listings.show');
 
-Route::get('/{listing}/apply', [Controllers\ListingController::class, 'apply'])
-    ->name('listings.apply');
+Route::get('/{listing}/apply', [ApplicationController::class, 'create'])->name('applications.create');
