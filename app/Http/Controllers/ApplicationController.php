@@ -22,7 +22,7 @@ class ApplicationController extends Controller
             'resume' => 'file|max:2048'
         ];
 
-        $application = user->applications()
+        $application = user->applications() //Need application model
             ->create([
                 'email' => $request->email,
                 'name' => $request->name,
