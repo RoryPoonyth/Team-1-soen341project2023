@@ -84,13 +84,24 @@ class ApplicationController extends Controller
         }
     }
 
-    public function edit($id)
+    public function edit($id) 
     {
-        return view('applications.edit');
+        return view('applications.edit', compact('id'));
     }
 
-    public function update(Request $request)
+    public function update(Request $request,  $id)
     {
+        try {
+            Application::find($id)
+                ->update([
+                    'status' => $request->status,
+                ]);
+                
+            return redirect()->route('dashboard');
+
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
 
     }
 

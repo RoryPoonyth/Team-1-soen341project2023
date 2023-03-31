@@ -31,10 +31,10 @@ Route::get('/dashboard', [ListingController::class, 'index'])
 Route::get('/dashboard/{listing}', [ApplicationController::class, 'index'])
     ->name('applications.show');
 
-Route::get('/dashboard/{listing}/{id}/update', [ApplicationController::class, 'edit'])
+Route::get('/dashboard/{id}/update', [ApplicationController::class, 'edit'])
     ->name('applications.edit');
 
-    Route::patch('/dashboard/{listing}/{id}/update', [ApplicationController::class, 'update'])
+    Route::patch('/dashboard/{id}/update', [ApplicationController::class, 'update'])
     ->name('applications.update');
 
 
