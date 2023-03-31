@@ -68,8 +68,9 @@ class ApplicationController extends Controller
 
         Auth::login($user);
 
-        try {
-            $user->applications() //Need application model
+
+        try{
+            $user->applications()
                 ->create([
                     'email' => $request->email,
                     'name' => $request->name,
