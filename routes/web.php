@@ -28,6 +28,8 @@ Route::get('/dashboard', [ListingController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
+Route::get('/dashboard/{listing}', [ApplicationController::class, 'index'])
+    ->name('applications.show');
 
 // Route::middleware('auth')->group(function () {
 //     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

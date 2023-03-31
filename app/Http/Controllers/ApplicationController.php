@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Application;
 use App\Models\Listing;
 use App\Models\Tag;
 use App\Models\User;
@@ -13,6 +14,37 @@ use Illuminate\Support\Str;
 
 class ApplicationController extends Controller
 {
+
+    public function index(Listing $listing)
+    {
+
+
+        $user = Auth::user();
+
+        if ($user->is_employer){
+
+            $applications = Application::where('listing_id', $listing->id)
+                ->with('user')
+                ->latest()
+                ->get();
+
+            return view('applications.show', compact('applications', 'listing'));
+        } else{
+
+            $application = Application::where('listing_id', $listing->id)
+                            ->where('user_id', $user->id)
+                            ->first();
+
+            return view('applications.show', compact('application', 'listing'));
+        }
+    }
+
+    public function create(Listing $listing, Request $request)
+    {
+        return view('applications.create', compact('listing'));
+    }
+
+
     public function store(Request $request)
     {
         // process application form
@@ -50,8 +82,4 @@ class ApplicationController extends Controller
         }
     }
 
-    public function create(Listing $listing, Request $request)
-    {
-        return view('applications.create', compact('listing'));
-    }
 }

@@ -14,6 +14,7 @@ class Application extends Model
         'email',
         'resume',
         'listing_id',
+        'status',
     ];
 
     public function user()
