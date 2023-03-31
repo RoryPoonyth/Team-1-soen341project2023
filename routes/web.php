@@ -31,6 +31,13 @@ Route::get('/dashboard', [ListingController::class, 'index'])
 Route::get('/dashboard/{listing}', [ApplicationController::class, 'index'])
     ->name('applications.show');
 
+Route::get('/dashboard/{listing}/{id}/update', [ApplicationController::class, 'edit'])
+    ->name('applications.edit');
+
+    Route::patch('/dashboard/{listing}/{id}/update', [ApplicationController::class, 'update'])
+    ->name('applications.update');
+
+
 // Route::middleware('auth')->group(function () {
 //     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
 //     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

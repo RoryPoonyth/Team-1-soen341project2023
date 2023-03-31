@@ -29,7 +29,7 @@ class ApplicationController extends Controller
                 ->get();
 
             return view('applications.show', compact('applications', 'listing'));
-        } else{
+        } else {
 
             $application = Application::where('listing_id', $listing->id)
                             ->where('user_id', $user->id)
@@ -67,7 +67,8 @@ class ApplicationController extends Controller
         }
 
         Auth::login($user);
-        try{
+
+        try {
             $user->applications() //Need application model
                 ->create([
                     'email' => $request->email,
@@ -80,6 +81,16 @@ class ApplicationController extends Controller
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
+    }
+
+    public function edit($id)
+    {
+        return view('applications.edit');
+    }
+
+    public function update(Request $request)
+    {
+
     }
 
 }
