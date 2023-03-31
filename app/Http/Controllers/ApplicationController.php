@@ -13,7 +13,7 @@ use Illuminate\Support\Str;
 
 class ApplicationController extends Controller
 {
-    public function store(Listing $listing, Request $request)
+    public function store(Request $request)
     {
         // process application form
         $validationArray = [
@@ -40,7 +40,8 @@ class ApplicationController extends Controller
                 ->create([
                     'email' => $request->email,
                     'name' => $request->name,
-                    'resume' => basename($request->file(key: 'resume')->store(path: 'public'))
+                    'resume' => basename($request->file(key: 'resume')->store(path: 'public')),
+                    'listing_id' => $request->input('listing_id'),
                 ]);
 
             return redirect()->route('dashboard');

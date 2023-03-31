@@ -13,6 +13,7 @@ class Application extends Model
         'name',
         'email',
         'resume',
+        'listing_id',
     ];
 
     public function user()
@@ -22,6 +23,6 @@ class Application extends Model
 
     public function listings()
     {
-        return $this->hasOne(Listing::class);
+        return $this->belongsTo(Listing::class);
     }
 }

@@ -22,6 +22,8 @@
                 enctype="multipart/form-data"
                 class="bg-gray-100 p-4"
             >
+            @csrf
+                <input type="text" class="hidden" name="listing_id" id="listing_id" value={{ $listing->id }}>
                     <div class="flex mb-4">
                         <div class="flex-1 mx-2">
                             <x-input-label for="email" value="Email Address" />
