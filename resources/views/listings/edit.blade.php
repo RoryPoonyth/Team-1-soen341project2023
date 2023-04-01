@@ -16,17 +16,16 @@
             </div>
             @endif
 
-            <form action="{{ route('applications.update', $id ) }}" id="status_form" method="POST"
+            <form action="{{ route('listings.update', $id ) }}" id="active_form" method="POST"
                 enctype="multipart/form-data" class="bg-gray-100 p-4">
                 @csrf
                 @method("PATCH")
 
                 <div class="mb-4 mx-2">
-                    <label for="status">Update the status of this application </label>
-                    <select name="status" id="status" class="block mt-1 w-full">
-                        <option value="applied">Applied</option>
-                        <option value="accepted">Accepted</option>
-                        <option value="refused">Refused</option>
+                    <label for="is_active">Update the status of this listing </label>
+                    <select name="is_active" id="is_active" class="block mt-1 w-full">
+                        <option value="1">Is Active</option>
+                        <option value="0">Is not Active</option>
                     </select>
                 </div>
 
@@ -45,7 +44,7 @@
     document.getElementById('form_submit').addEventListener('click', async (e) => {
         // prevent the submission of the form immediately
         e.preventDefault();
-        document.getElementById('status_form').submit();
+        document.getElementById('active_form').submit();
     })
     </script>
 </x-app-layout>

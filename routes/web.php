@@ -34,8 +34,15 @@ Route::get('/dashboard/{listing}', [ApplicationController::class, 'index'])
 Route::get('/dashboard/{id}/update', [ApplicationController::class, 'edit'])
     ->name('applications.edit');
 
-    Route::patch('/dashboard/{id}/update', [ApplicationController::class, 'update'])
+Route::patch('/dashboard/{id}/update', [ApplicationController::class, 'update'])
     ->name('applications.update');
+
+Route::get('/dashboard/update/{listing}', [ListingController::class, 'edit'])
+    ->name('listings.edit');
+
+Route::patch('/dashboard/update/{listing}', [ListingController::class, 'update'])
+    ->name('listings.update');
+
 
 
 // Route::middleware('auth')->group(function () {

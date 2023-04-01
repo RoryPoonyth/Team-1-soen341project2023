@@ -102,6 +102,12 @@
                         <p class="leading-relaxed text-base">
                             <strong>Location: </strong>{{ $listing->location }}<br>
                             <strong>Company: </strong>{{ $listing->company }}
+                            @if (Auth::user()->is_employer)
+                                <a href="{{ route('listings.edit', $listing->id ) }}" class="block text-center my-4 tracking-wide
+                                 bg-white text-indigo-500 text-sm font-medium title-font py-2 border border-indigo-500 hover:bg-indigo-500 hover:text-white uppercase">
+                                    Update Job Status
+                                </a>
+                            @endif
                         </p>
                     </div>
                 </div>

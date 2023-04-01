@@ -20,9 +20,9 @@ class ListingController extends Controller
 
         if ($user->is_employer){
             $listings = Listing::where('user_id', $user->id)
-                ->where('is_active', true)
                 ->with('tags')
                 ->get();
+
 
                 return view('dashboard', compact('listings'));
         }else{
@@ -124,6 +124,24 @@ class ListingController extends Controller
         } catch (\Exception $e) {
             return redirect()->back()
                 ->withErrors(['error' => $e->getMessage()]);
+        }
+    }
+
+    public function edit($id)
+    {
+        return view('listings.edit', compact('id'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        try{
+            Listing::where('id', $id)
+                ->update([
+                    'is_active' => $request->is_active,
+                ]);
+            return redirect()->route('dashboard');
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
     }
 }

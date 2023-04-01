@@ -9,6 +9,9 @@ class Listing extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'is_active',
+    ];
     protected $guarded =[];
 
     public function getRouteKeyName()
