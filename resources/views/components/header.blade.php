@@ -9,7 +9,6 @@
             </svg>
             <span class="ml-3 text-xl">Laravel Job Board</span>
         </a>
-
         @guest
             <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
                 <a href="{{ route('login') }}" class="mr-5 hover:text-gray-900">Login</a>
@@ -40,6 +39,9 @@
                 <x-slot name="content">
                     <x-dropdown-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         Dashboard
+                    </x-dropdown-link>
+                    <x-dropdown-link :href="route('profile.edit')" :active="request()->routeIs('dashboard')">
+                        Profile
                     </x-dropdown-link>
                     @if (Auth::user()->is_employer)
                         <x-dropdown-link :href="route('listings.create')" :active="request()->routeIs('listings.create')">

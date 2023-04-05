@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
 use App\Http\Controllers\HomeController;
@@ -8,9 +9,6 @@ use App\Http\Controllers\ListingController;
 
 Route::get('/', HomeController::class)
     ->name('listings.index');
-
-// Route::get('/', [Controllers\ListingController::class, 'index'])
-//     ->name('listings.index');
 
 Route::get('/new', [Controllers\ListingController::class, 'create'])
     ->name('listings.create');
@@ -43,13 +41,12 @@ Route::get('/dashboard/update/{listing}', [ListingController::class, 'edit'])
 Route::patch('/dashboard/update/{listing}', [ListingController::class, 'update'])
     ->name('listings.update');
 
-
-
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
+    
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
 require __DIR__.'/auth.php';
 
