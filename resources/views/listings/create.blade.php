@@ -167,6 +167,7 @@
         document.getElementById('form_submit').addEventListener('click', async (e) => {
             // prevent the submission of the form immediately
             e.preventDefault();
+
             const { paymentMethod, error } = await stripe.createPaymentMethod(
                 'card', cardElement, {}
             );

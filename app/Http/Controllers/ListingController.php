@@ -18,14 +18,14 @@ class ListingController extends Controller
     {
         $user = Auth::user();
 
-        if ($user->is_employer){
+        if ($user->is_employer) {
             $listings = Listing::where('user_id', $user->id)
                 ->with('tags')
                 ->get();
 
 
                 return view('dashboard', compact('listings'));
-        }else{
+        }else {
             $listings = Application::where('user_id', $user->id)
                 ->pluck('listing_id')
                 ->toArray();
@@ -110,7 +110,7 @@ class ListingController extends Controller
                     'is_active' => true
                 ]);
 
-            foreach(explode(',', $request->tags) as $requestTag) {
+            foreach (explode(',', $request->tags) as $requestTag) {
                 $tag = Tag::firstOrCreate([
                     'slug' => Str::slug(trim($requestTag))
                 ], [
@@ -134,7 +134,7 @@ class ListingController extends Controller
 
     public function update(Request $request, $id)
     {
-        try{
+        try {
             Listing::where('id', $id)
                 ->update([
                     'is_active' => $request->is_active,

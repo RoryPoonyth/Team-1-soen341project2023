@@ -11,6 +11,13 @@ class Listing extends Model
 
     protected $fillable = [
         'is_active',
+        'title',
+        'company',
+        'logo',
+        'location',
+        'apply_link',
+        'content',
+        'slug'
     ];
     protected $guarded =[];
 

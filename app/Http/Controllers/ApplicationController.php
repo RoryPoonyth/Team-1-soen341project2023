@@ -21,7 +21,7 @@ class ApplicationController extends Controller
 
         $user = Auth::user();
 
-        if ($user->is_employer){
+        if ($user->is_employer) {
 
             $applications = Application::where('listing_id', $listing->id)
                 ->with('user')
@@ -58,7 +58,7 @@ class ApplicationController extends Controller
 
         $user = Auth::user();
 
-        if (!$user){
+        if (!$user) {
             $user = User::create([
                 'name' => $request->name,
                 'email'=> $request->email,
@@ -69,7 +69,7 @@ class ApplicationController extends Controller
         Auth::login($user);
 
 
-        try{
+        try {
             $user->applications()
                 ->create([
                     'email' => $request->email,
@@ -84,19 +84,19 @@ class ApplicationController extends Controller
         }
     }
 
-    public function edit($id) 
+    public function edit($id)
     {
         return view('applications.edit', compact('id'));
     }
 
-    public function update(Request $request,  $id)
+    public function update(Request $request, $id)
     {
         try {
             Application::find($id)
                 ->update([
                     'status' => $request->status,
                 ]);
-                
+
             return redirect()->route('dashboard');
 
         } catch (\Exception $e) {
