@@ -32,7 +32,7 @@
                                 id="email"
                                 type="email"
                                 name="email"
-                                :value="old('email')"
+                                :value="old('email', Auth::user()->email)"
                                 required
                                 autofocus />
                         </div>
@@ -43,7 +43,7 @@
                                 id="name"
                                 type="text"
                                 name="name"
-                                :value="old('name')"
+                                :value="old('name', Auth::user()->name)"
                                 required />
                         </div>
                     </div>
@@ -79,7 +79,9 @@
                 </div>
                 <div class="mb-2 mx-2">
                     @csrf
-                    <button type="submit" id="form_submit" class="block w-full items-center bg-indigo-500 text-white border-0 py-2 focus:outline-none hover:bg-indigo-600 rounded text-base mt-4 md:mt-0">APPLY</button>
+                    <button type="submit" id="form_submit" class="block w-full items-center
+                     bg-indigo-500 text-white border-0 py-2 focus:outline-none
+                      hover:bg-indigo-600 rounded text-base mt-4 md:mt-0">APPLY</button>
                 </div>
             </form>
         </div>

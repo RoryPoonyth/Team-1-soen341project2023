@@ -40,9 +40,12 @@
                     <x-dropdown-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         Dashboard
                     </x-dropdown-link>
+                    @if (!Auth::user()->is_employer)
                     <x-dropdown-link :href="route('profile.edit')" :active="request()->routeIs('dashboard')">
                         Profile
                     </x-dropdown-link>
+                    @endif
+
                     @if (Auth::user()->is_employer)
                         <x-dropdown-link :href="route('listings.create')" :active="request()->routeIs('listings.create')">
                             Create Listing

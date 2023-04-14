@@ -67,7 +67,8 @@
                                 Your application
                             </h4>
                             <div
-                                class="py-6 px-4 flex flex-wrap md:flex-nowrap border-b border-gray-100 bg-white hover:bg-gray-100">
+                                class="py-6 px-4 flex flex-wrap md:flex-nowrap border-b
+                                 border-gray-100 bg-white hover:bg-gray-100">
                                 <div class="md:w-16 md:mb-0 mb-6 mr-4 flex-shrink-0 flex flex-col">
                                     <img src="/storage/{{ $listing->logo }}"
                                         alt="{{ $listing->company }}
@@ -83,16 +84,19 @@
                                 </div>
                                 <div class="md:flex-grow mr-8 flex items-center justify-start">
                                     <span
-                                        class="inline-block ml-2 tracking-wide  font-large title-font py-0.5 px-1.5 border border-indigo-500 uppercase bg-white text-indigo-500">
+                                        class="inline-block ml-2 tracking-wide  font-large title-font py-0.5 px-1.5 border
+                                         border-indigo-500 uppercase bg-white text-indigo-500">
                                         <a href="{{ Storage::url($application->resume) }}">resume</a>
                                     </span>
                                     <span
-                                        class="inline-block ml-2 tracking-wide  font-large title-font py-0.5 px-1.5 border border-indigo-500 uppercase bg-white text-indigo-500
+                                        class="inline-block ml-2 tracking-wide
+                                         font-large title-font py-0.5 px-1.5 border
+                                         border-indigo-600 uppercase bg-white text-indigo-600
                                         {{ $application->status === 'accepted'
-                                            ? 'bg-green-500 border-green-500 text-white'
+                                            ? 'bg-green-400 border-green-400 text-white'
                                             : ($application->status === 'refused'
-                                                ? 'bg-rose-500 border-rose-500 text-white'
-                                                : 'bg-indigo-500 border-indigo-500 text-white') }}">
+                                                ? 'bg-rose-400 border-rose-500 text-white'
+                                                : 'bg-indigo-400 border-indigo-500 text-white') }}">
                                         {{ $application->status }}
                                     </span>
                                 </div>
