@@ -33,7 +33,8 @@
                 <div class="mb-2 mx-2">
                     @csrf
                     <button type="submit" id="form_submit"
-                        class="block w-full items-center bg-indigo-500 text-white border-0 py-2 focus:outline-none hover:bg-indigo-600 rounded text-base mt-4 md:mt-0">
+                        class="block w-full items-center bg-indigo-500 text-white border-0 py-2 focus:outline-none
+                         hover:bg-indigo-600 rounded text-base mt-4 md:mt-0">
                         Update status
                     </button>
                 </div>

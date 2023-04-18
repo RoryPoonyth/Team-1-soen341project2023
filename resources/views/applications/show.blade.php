@@ -84,7 +84,8 @@
                                 </div>
                                 <div class="md:flex-grow mr-8 flex items-center justify-start">
                                     <span
-                                        class="inline-block ml-2 tracking-wide  font-large title-font py-0.5 px-1.5 border
+                                        class="inline-block ml-2 tracking-wide  font-large title-font py-0.5
+                                         px-1.5 border
                                          border-indigo-500 uppercase bg-white text-indigo-500">
                                         <a href="{{ Storage::url($application->resume) }}">resume</a>
                                     </span>
@@ -114,7 +115,8 @@
                             @if (Auth::user()->is_employer)
                                 <a href="{{ route('listings.edit', $listing->id) }}"
                                     class="block text-center my-4 tracking-wide
-                                 bg-white text-indigo-500 text-sm font-medium title-font py-2 border border-indigo-500 hover:bg-indigo-500 hover:text-white uppercase">
+                                 bg-white text-indigo-500 text-sm font-medium title-font py-2 border
+                                  border-indigo-500 hover:bg-indigo-500 hover:text-white uppercase">
                                     Update Job Status
                                 </a>
                             @endif

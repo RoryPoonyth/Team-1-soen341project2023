@@ -124,7 +124,8 @@
                     <textarea
                         id="content"
                         rows="8"
-                        class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full"
+                        class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring
+                         focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full"
                         name="content"
                     ></textarea>
                 </div>
@@ -135,7 +136,9 @@
                             id="is_highlighted"
                             name="is_highlighted"
                             value="Yes"
-                            class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-offset-0 focus:ring-indigo-200 focus:ring-opacity-50">
+                            class="rounded border-gray-300 text-indigo-600 shadow-sm
+                             focus:border-indigo-300 focus:ring focus:ring-offset-0
+                              focus:ring-indigo-200 focus:ring-opacity-50">
                         <span class="ml-2">Highlight this post (extra $19)</span>
                     </label>
                 </div>
@@ -149,7 +152,9 @@
                         id="payment_method_id"
                         name="payment_method_id"
                         value="">
-                    <button type="submit" id="form_submit" class="block w-full items-center bg-indigo-500 text-white border-0 py-2 focus:outline-none hover:bg-indigo-600 rounded text-base mt-4 md:mt-0">Pay + Continue</button>
+                    <button type="submit" id="form_submit" class="block w-full items-center
+                     bg-indigo-500 text-white border-0 py-2 focus:outline-none
+                      hover:bg-indigo-600 rounded text-base mt-4 md:mt-0">Pay + Continue</button>
                 </div>
             </form>
         </div>
