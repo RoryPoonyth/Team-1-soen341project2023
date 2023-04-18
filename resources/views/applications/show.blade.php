@@ -95,8 +95,8 @@
                                         {{ $application->status === 'accepted'
                                             ? 'bg-green-400 border-green-400 text-white'
                                             : ($application->status === 'refused'
-                                                ? 'bg-rose-400 border-rose-500 text-white'
-                                                : 'bg-indigo-400 border-indigo-500 text-white') }}">
+                                                ? 'bg-rose-500 border-rose-500 text-white'
+                                                : 'bg-white border-indigo-500 text-indigo-500') }}">
                                         {{ $application->status }}
                                     </span>
                                 </div>

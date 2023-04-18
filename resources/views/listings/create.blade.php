@@ -103,7 +103,7 @@
                         required />
                 </div>
                 <div class="mb-4 mx-2">
-                    <x-input-label for="apply_link" value="Link To Apply" />
+                    <x-input-label for="apply_link" value="Company Website" />
                     <x-text-input
                         id="apply_link"
                         class="block mt-1 w-full"
