@@ -91,7 +91,6 @@
                                     <span
                                         class="inline-block ml-2 tracking-wide
                                          font-large title-font py-0.5 px-1.5 border
-                                         border-indigo-600 uppercase bg-white text-indigo-600
                                         {{ $application->status === 'accepted'
                                             ? 'bg-green-400 border-green-400 text-white'
                                             : ($application->status === 'refused'
